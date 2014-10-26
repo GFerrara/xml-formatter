@@ -1,8 +1,5 @@
 package now.gf.xml.utils;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
@@ -261,16 +258,5 @@ public class XmlFormatter {
 		private void writeString(final String string) throws IOException {
 			out.write(string);
 		}
-	}
-
-	public static void main(String[] args) throws Exception {
-		XmlFormatter xmlBeautifier = new XmlFormatter(4);
-		File outFile = new File(System.getProperty("java.io.tmpdir"), "output.xml");
-		FileWriter out = new FileWriter(outFile);
-		FileReader in = new FileReader(new File("C:/Users/Giorgio/workspace/xml-formatter/source/now/gf/xml/utils/example-02.xml"));
-		xmlBeautifier.format(in, out);
-		out.flush();
-		out.close();
-		System.out.println("Risultato in " + outFile.getAbsolutePath());
 	}
 }
